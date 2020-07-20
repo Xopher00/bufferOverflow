@@ -122,5 +122,5 @@ if payload doesnt work right away, try adding some nops ("\x90") between pointer
 # Step 8: Profit!
 
 
-* Disclaimer *
+* Disclaimer:
 These scripts are only for use in authorized penetration testing or practise in a simulated environment.
