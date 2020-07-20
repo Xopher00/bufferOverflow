@@ -119,6 +119,8 @@ copy payload into our buffer
 run python script to crash program, execute payload
 if payload doesnt work right away, try adding some nops ("\x90") between pointer adress and payload
 
-
-
 # Step 8: Profit!
+
+
+* Disclaimer *
+These scripts are only for use in authorized penetration testing or practise in a simulated environment.
